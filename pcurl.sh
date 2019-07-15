@@ -49,7 +49,7 @@ echo "Downloading ${URL}"
 #FILESIZE=`curl -s -I ${URL}| tail -3 | head -2 | awk '{print $2}'`
 #echo ${FILESIZE}
 
-FILESIZE_TXT="./FILESIZE.txt"
+FILESIZE_TXT=$(mktemp foo.XXXXXX)
 curl -s -L -I ${URL} > ${FILESIZE_TXT}
 i="0"
 
